@@ -18,10 +18,11 @@ body {
     border-radius: 8px;
     width: 100%;
     max-width: 600px; /* Adjusted width for the form */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add some transparency if you want a slightly dark background for form */
 }
 
 .logo {
-    width: 300px; /* Increased logo size */
+    width: 400px; /* Increased logo size */
     height: auto;
     margin-bottom: 40px; /* More space below logo */
 }
@@ -32,7 +33,7 @@ h1 {
 }
 
 input {
-    width: 100%;
+    width: 80%; /* Centered horizontally */
     padding: 15px;
     margin: 10px 0;
     border: 2px solid white;
@@ -41,6 +42,9 @@ input {
     color: white;
     font-size: 16px;
     outline: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 input:focus {
@@ -53,11 +57,14 @@ button {
     border: none;
     padding: 15px;
     font-size: 18px;
-    width: 100%;
+    width: 80%; /* Button width to match input */
     cursor: pointer;
     border-radius: 12px; /* Rounded button */
     transition: background 0.3s;
     margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button:hover {
