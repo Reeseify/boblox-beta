@@ -18,7 +18,7 @@ body {
     border-radius: 8px;
     width: 100%;
     max-width: 600px; /* Adjusted width for the form */
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add some transparency if you want a slightly dark background for form */
+    background-color: transparent; /* Fully transparent box */
 }
 
 .logo {
