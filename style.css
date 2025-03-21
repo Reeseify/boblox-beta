@@ -17,11 +17,11 @@ body {
     padding: 40px;
     border-radius: 8px;
     width: 100%;
-    max-width: 600px; /* Adjusted to fit larger logo */
+    max-width: 600px; /* Adjusted width for the form */
 }
 
 .logo {
-    width: 250px; /* Made the logo much larger */
+    width: 300px; /* Increased logo size */
     height: auto;
     margin-bottom: 40px; /* More space below logo */
 }
