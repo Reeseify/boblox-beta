@@ -22,7 +22,8 @@ body {
 }
 
 .logo {
-    width: 150px; /* Adjust the size of your logo */
+    width: 120px; /* Adjusted logo size */
+    height: auto;
     margin-bottom: 20px;
 }
 
@@ -34,7 +35,7 @@ h1 {
 input {
     width: 100%;
     padding: 15px;
-    margin: 15px 0;
+    margin: 10px 0;
     border: 2px solid white;
     border-radius: 12px;
     background-color: #2a2a2a; /* Dark inside */
