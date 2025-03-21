@@ -14,17 +14,16 @@ body {
 }
 
 .signup-container {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     padding: 40px;
     border-radius: 8px;
     width: 100%;
-    max-width: 400px;
+    max-width: 600px; /* Adjusted to fit larger logo */
 }
 
 .logo {
-    width: 120px; /* Adjusted logo size */
+    width: 250px; /* Made the logo much larger */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 40px; /* More space below logo */
 }
 
 h1 {
