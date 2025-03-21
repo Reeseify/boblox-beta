@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boblox Beta</title>
+    <title>Sign Up - Boblox</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Boblox Beta</h1>
-    <p>Explore the next generation of Boblox Studio.</p>
-    <button onclick="alert('Coming Soon!')">Get Started</button>
+    <div class="signup-container">
+        <h1>Create Your Account</h1>
+        <form action="#">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#">Log in</a></p>
+    </div>
 </body>
 </html>
