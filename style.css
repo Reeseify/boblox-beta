@@ -21,6 +21,11 @@ body {
     max-width: 400px;
 }
 
+.logo {
+    width: 150px; /* Adjust the size of your logo */
+    margin-bottom: 20px;
+}
+
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -28,11 +33,11 @@ h1 {
 
 input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid white;
+    border-radius: 12px;
+    background-color: #2a2a2a; /* Dark inside */
     color: white;
     font-size: 16px;
     outline: none;
@@ -43,19 +48,20 @@ input:focus {
 }
 
 button {
-    background-color: #ff6600;
+    background-color: #4CAF50; /* Green button */
     color: white;
     border: none;
     padding: 15px;
     font-size: 18px;
     width: 100%;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 12px; /* Rounded button */
     transition: background 0.3s;
+    margin-top: 20px;
 }
 
 button:hover {
-    background-color: #cc5500;
+    background-color: #45a049; /* Slightly darker green */
 }
 
 p {
