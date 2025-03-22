@@ -11,13 +11,14 @@
   <div id="game-container">Loading game data...</div>
 
   <script>
+    // Extract the game id from the URL
     const params = new URLSearchParams(window.location.search);
     const gameId = params.get('id');
 
     if (!gameId) {
       document.getElementById('game-container').innerText = "Game not found";
     } else {
-      fetch(`https://your-server.com/api/games/${gameId}`)
+      fetch(`https://yourserver.com/api/games/${gameId}`)
         .then(res => res.json())
         .then(data => {
           document.getElementById('game-container').innerHTML = `
@@ -25,6 +26,8 @@
             <img src="${data.thumbnail}" alt="Game Thumbnail">
             <p>${data.description}</p>
           `;
+        }).catch(() => {
+          document.getElementById('game-container').innerText = "Failed to load game.";
         });
     }
   </script>
