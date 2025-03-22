@@ -110,5 +110,20 @@
     <span>Copyright Boblox 2025</span>
   </footer>
 
+  <!-- Cookie Check Script -->
+<script>
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    return parts.length === 2 ? parts.pop().split(';').shift() : null;
+  }
+
+  // If no login cookie, redirect to signup page
+  if (!getCookie('bobloxUser')) {
+    window.location.href = 'https://beta.boblox.ca';
+  }
+</script>
+
+  
 </body>
 </html>
