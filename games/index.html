@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Boblox - Game</title>
+  <link rel="stylesheet" href="../home-style.css">
+  <link rel="icon" href="https://beta.boblox.ca/favicon.png">
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <img src="../boblox-logo.png" alt="Boblox Logo" class="logo">
+    <div class="nav-buttons">
+      <button onclick="window.location.href='/home.html'">Home</button>
+      <button>Games</button>
+      <button>Catalog</button>
+      <button>Create</button>
+      <button>Profile</button>
+    </div>
+    <input type="text" placeholder="Search">
+  </div>
+
+  <!-- Sidebar (Shown only if logged in) -->
+  <div id="sidebar" class="sidebar" style="display:none;">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Profile</a>
+      <a href="#">Messages</a>
+      <a href="#">Friends</a>
+      <a href="#">Avatar</a>
+      <a href="#">Shop</a>
+      <a href="#">Create</a>
+      <a href="#">Robux</a>
+    </nav>
+  </div>
+
+  <!-- Game Content -->
+  <div class="main-content">
+    <div id="game-container">
+      <h1>Loading Game...</h1>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <img src="../boblox-logo.png" alt="Boblox Logo">
+    <span>Copyright Boblox 2025</span>
+  </footer>
+
+  <script>
+    // Check login cookie to toggle sidebar
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      return parts.length === 2 ? parts.pop().split(';').shift() : null;
+    }
+
+    if (getCookie('bobloxUser')) {
+      document.getElementById('sidebar').style.display = 'flex';
+    }
+
+    // Extract Game ID from URL
+    const pathParts = window.location.pathname.split('/');
+    const gameId = pathParts[pathParts.length - 1];
+
+    // If invalid, show error
+    if (!gameId || isNaN(gameId)) {
+      document.getElementById('game-container').innerHTML = '<h2>Invalid Game ID</h2>';
+    } else {
+      // Example: Replace this URL with your real game API
+      fetch(`https://your-api.com/games/${gameId}`)
+        .then(response => response.json())
+        .then(game => {
+          document.getElementById('game-container').innerHTML = `
+            <h1>${game.name}</h1>
+            <img src="${game.thumbnail}" alt="Game Thumbnail" style="max-width: 400px; border-radius: 8px;">
+            <p>${game.description}</p>
+            <div>Visits: ${game.visits || 0}</div>
+            <div>Likes: ${game.likes || 0}%</div>
+            <button style="margin-top:20px; padding:10px 20px;">Play</button>
+          `;
+        })
+        .catch(() => {
+          document.getElementById('game-container').innerHTML = '<h2>Failed to load game data</h2>';
+        });
+    }
+  </script>
+
+</body>
+
+</html>
