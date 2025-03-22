@@ -70,7 +70,7 @@
       document.getElementById('game-container').innerHTML = '<h2>Invalid Game ID</h2>';
     } else {
       // Example: Replace this URL with your real game API
-      fetch(`https://3fsvj1zh-3000.use.devtunnels.ms/assets/get?=${gameId}`)
+      fetch(`https://3fsvj1zh-3000.use.devtunnels.ms/assets/get?assetId=${gameId}`)
         .then(response => response.json())
         .then(game => {
           document.getElementById('game-container').innerHTML = `
