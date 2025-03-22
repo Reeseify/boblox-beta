@@ -18,7 +18,7 @@ body {
     border-radius: 8px;
     width: 100%;
     max-width: 600px; /* Adjusted width for the form */
-    background-color: transparent; /* Fully transparent box */
+    background-color: rgba(0, 0, 0, 0.8); /* Solid non-transparent background */
 }
 
 .logo {
@@ -36,7 +36,7 @@ input {
     width: 80%; /* Centered horizontally */
     padding: 15px;
     margin: 10px 0;
-    border: 2px solid white;
+    border: 1px solid #ccc; /* Thinner, darker border */
     border-radius: 12px;
     background-color: #2a2a2a; /* Dark inside */
     color: white;
@@ -52,8 +52,8 @@ input:focus {
 }
 
 button {
-    background-color: #4CAF50; /* Green button */
-    color: white;
+    background-color: #ffffff; /* White button */
+    color: #000; /* Black text */
     border: none;
     padding: 15px;
     font-size: 18px;
@@ -68,7 +68,26 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Slightly darker green */
+    background-color: #f1f1f1; /* Slightly gray on hover */
+}
+
+.login-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #ff6600; /* Orange color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.login-button:hover {
+    background-color: #cc5500; /* Darker orange on hover */
 }
 
 p {
