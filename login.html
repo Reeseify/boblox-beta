@@ -1,54 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en"><head>
+    <title>Boblox</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Boblox">
+    <meta property="og:description" content="Boblox is the next generation of game creation. Join others in the new world of games!">
+    <meta property="og:image" content="https://beta.boblox.ca/share-logo.png">
+    <meta property="og:url" content="https://beta.boblox.ca">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Boblox">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Boblox - Login</title>
-  <link rel="stylesheet" href="login-style.css">
-  <link rel="icon" href="https://beta.boblox.ca/favicon.png">
-</head>
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Boblox">
+    <meta name="twitter:description" content="Boblox is the next generation of game creation. Join others in the new world of games!">
+    <meta name="twitter:image" content="https://beta.boblox.ca/share-logo.png">
+    <meta name="twitter:url" content="https://beta.boblox.ca">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://beta.boblox.ca/favicon.png">
+
+    <!-- Optionally, other meta tags like charset, viewport, etc. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+<style type="text/css" id="operaUserStyle"></style></head>
 
 <body>
+    <!-- Login button at top right -->
+    <button class="login-button">Login</button>
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
+    <!-- Boblox Logo outside of signup box -->
     <img src="boblox-logo.png" alt="Boblox Logo" class="logo">
-    <div class="nav-buttons">
-      <button>Home</button>
-      <button>Games</button>
-      <button>Catalog</button>
-      <button>Create</button>
-      <button>Profile</button>
+
+    <!-- Sign Up Form -->
+    <div class="signup-container">
+        <h1>SIGN UP AND START HAVING FUN!</h1>
+        <form action="#">
+            <input type="text" id="username" placeholder="Username" required="">
+            <input type="password" id="password" placeholder="Password" required="">
+            
+            <button type="submit">Sign Up</button>
+        </form>
     </div>
-    <input type="text" placeholder="Search">
-    <!-- Sign Up button now links to beta.boblox.ca -->
-    <a href="https://beta.boblox.ca" class="signup-btn">Sign Up</a>
-  </div>
 
-  <!-- LOGIN FORM -->
-  <div class="login-container">
-    <h2>Login to Boblox</h2>
-    <form>
-      <input type="text" placeholder="Username / Email / Phone" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit">Log In</button>
 
-      <a href="#">Forgot Password or Username?</a>
-
-      <button type="button">Email Me a One-Time Code</button>
-      <button type="button">Use Another Device</button>
-
-      <!-- Sign Up link now goes to beta.boblox.ca -->
-      <p>Don't have an account? <a href="https://beta.boblox.ca">Sign Up</a></p>
-    </form>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <img src="boblox-logo.png" alt="Boblox Logo">
-    <span>Copyright Boblox 2025</span>
-  </footer>
-
-</body>
-
-</html>
+</body></html>
