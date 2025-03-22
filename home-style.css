@@ -27,7 +27,7 @@ body {
   border: none;
   padding: 8px 16px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 8px;
   transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -44,7 +44,7 @@ body {
 .top-bar input {
   width: 250px;
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 8px;
   border: none;
   background-color: #333;
   color: #fff;
@@ -75,11 +75,13 @@ body {
   color: #ddd;
   text-decoration: none;
   padding: 12px 0;
-  transition: color 0.3s, transform 0.3s;
+  border-radius: 8px;
+  transition: color 0.3s, transform 0.3s, background-color 0.3s;
 }
 
 .sidebar nav a:hover {
   color: #fff;
+  background-color: #333;
   transform: translateX(5px);
 }
 
@@ -131,15 +133,16 @@ h1 {
 }
 
 .game-item, .activity-item {
-  width: 120px;
+  width: 140px;
   text-align: center;
   transition: transform 0.3s;
+  flex-shrink: 0;
 }
 
 .game-item img, .activity-item img {
   width: 120px;
   height: 120px;
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: #333;
   object-fit: cover;
   transition: transform 0.3s;
@@ -149,7 +152,8 @@ h1 {
   transform: scale(1.05);
 }
 
-.game-item .game-title, .game-item .game-likes {
+.game-item .game-title, .game-item .game-likes,
+.activity-item .game-title, .activity-item .game-likes {
   font-size: 14px;
   margin-top: 5px;
 }
