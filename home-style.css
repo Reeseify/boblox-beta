@@ -29,7 +29,7 @@ body {
 .topbar-left a {
   color: white;
   text-decoration: none;
-  margin-right: 15px;
+  margin-right: 20px;
   font-size: 16px;
 }
 
@@ -38,7 +38,7 @@ body {
 }
 
 .search-bar {
-  width: 180px;
+  width: 120px;
   padding: 6px 10px;
   border-radius: 5px;
   border: none;
@@ -62,7 +62,7 @@ body {
 
 /* Main Content */
 main {
-  width: 95%;
+  width: 90%;
   margin: auto;
   margin-top: 20px;
 }
@@ -86,33 +86,38 @@ main {
 
 .friend-list {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   overflow-x: auto;
   padding-bottom: 15px;
 }
 
 .friend-list img {
-  width: 64px;
-  height: 64px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background-color: #444;
 }
 
 .game-list, .activity-list {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   overflow-x: auto;
   padding-bottom: 15px;
 }
 
 .game-list img, .activity-list img {
-  width: 180px;
-  height: 100px;
+  width: 220px;
+  height: 130px;
   border-radius: 8px;
   background-color: #333;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 5px;
+}
+
+/* Add slight shadow and rounded container like Roblox */
+.friend-list img, .game-list img, .activity-list img {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
