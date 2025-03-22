@@ -14,7 +14,7 @@
   <div class="top-bar">
     <img src="boblox-logo.png" alt="Boblox Logo" class="logo">
     <div class="nav-buttons">
-      <button>Home</button>
+      <button onclick="location.href='home.html'">Home</button>
       <button>Games</button>
       <button>Catalog</button>
       <button>Create</button>
@@ -26,9 +26,9 @@
   <!-- LOGIN FORM -->
   <div class="login-container">
     <h2>Login to Boblox</h2>
-    <form>
-      <input type="text" placeholder="Username / Email / Phone" required>
-      <input type="password" placeholder="Password" required>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username / Email / Phone" required>
+      <input type="password" id="password" placeholder="Password" required>
       <button type="submit">Log In</button>
 
       <a href="#">Forgot Password or Username?</a>
@@ -36,7 +36,7 @@
       <button type="button">Email Me a One-Time Code</button>
       <button type="button">Use Another Device</button>
 
-      <p>Don't have an account? <a href="#">Sign Up</a></p>
+      <p>Don't have an account? <a href="https://beta.boblox.ca">Sign Up</a></p>
     </form>
   </div>
 
@@ -46,35 +46,35 @@
     <span>Copyright Boblox 2025</span>
   </footer>
 
-<!-- Auto-Redirect if already logged in -->
-<script>
-  // Cookie check function
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    return parts.length === 2 ? parts.pop().split(';').shift() : null;
-  }
+  <!-- SCRIPT SECTION -->
+  <script>
+    // Redirect if already logged in
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      return parts.length === 2 ? parts.pop().split(';').shift() : null;
+    }
 
-  // Redirect to home if already logged in
-  if (getCookie('bobloxUser')) {
-    window.location.href = 'https://beta.boblox.ca/home';
-  }
+    if (getCookie('bobloxUser')) {
+      window.location.href = 'https://beta.boblox.ca/home';
+    }
 
-  // Login form handler
-  const loginForm = document.querySelector('form');
-  loginForm.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
+    // Login form submit handler
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    // Set the cookie for 7 days
-    const d = new Date();
-    d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000)); // 7 days
-    document.cookie = "bobloxUser=loggedIn; expires=" + d.toUTCString() + "; path=/";
+      // Optionally validate username/password here
+      // Set the cookie for 7 days
+      const d = new Date();
+      d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000)); // 7 days
+      document.cookie = "bobloxUser=loggedIn; expires=" + d.toUTCString() + "; path=/";
 
-    // Redirect to home page after login
-    window.location.href = 'https://beta.boblox.ca/home';
-  });
-</script>
-  
+      // Redirect to home page
+      window.location.href = 'https://beta.boblox.ca/home';
+    });
+  </script>
+
 </body>
 
 </html>
