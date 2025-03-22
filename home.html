@@ -4,32 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boblox Home</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Boblox Home" />
+    <meta property="og:description" content="Welcome to your Boblox home page!" />
+    <meta property="og:image" content="https://beta.boblox.ca/share-logo.png" />
+    <meta property="og:url" content="https://beta.boblox.ca/home" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Boblox Home" />
+    <meta name="twitter:description" content="Welcome to your Boblox home page!" />
+    <meta name="twitter:image" content="https://beta.boblox.ca/share-logo.png" />
+    <meta name="twitter:url" content="https://beta.boblox.ca/home" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://beta.boblox.ca/favicon.png" />
+    
+    <!-- Home Page Styles -->
+    <link rel="stylesheet" href="home-style.css">
 </head>
 <body>
     <header>
-        <h1>Home</h1>
+        <div class="navbar">
+            <h1>Boblox</h1>
+            <input type="text" class="search-bar" placeholder="Search">
+            <button class="profile-btn">Profile</button>
+        </div>
     </header>
     
-    <section class="friends">
-        <h2>Friends (178)</h2>
-        <div class="friend-list">
-            <!-- Friend avatars go here -->
-        </div>
-    </section>
-    
-    <section class="continue">
-        <h2>Continue</h2>
-        <div class="game-list">
-            <!-- Game thumbnails go here -->
-        </div>
-    </section>
-    
-    <section class="friend-activity">
-        <h2>Friend Activity</h2>
-        <div class="activity-list">
-            <!-- Friend activity game icons go here -->
-        </div>
-    </section>
+    <main>
+        <section class="friends">
+            <h2>Friends</h2>
+            <div class="friend-list">
+                <!-- Friend avatars go here -->
+            </div>
+        </section>
+        
+        <section class="continue">
+            <h2>Continue</h2>
+            <div class="game-list">
+                <!-- Game thumbnails go here -->
+            </div>
+        </section>
+        
+        <section class="activity">
+            <h2>Friend Activity</h2>
+            <div class="activity-list">
+                <!-- Activity items go here -->
+            </div>
+        </section>
+    </main>
 </body>
 </html>
