@@ -28,10 +28,12 @@ body {
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .top-bar .nav-buttons button:hover {
   background-color: #333;
+  transform: scale(1.05);
 }
 
 .top-bar .logo {
@@ -47,6 +49,11 @@ body {
   background-color: #333;
   color: #fff;
   margin-left: 10px;
+  transition: transform 0.3s;
+}
+
+.top-bar input:hover {
+  transform: scale(1.02);
 }
 
 .main-container {
@@ -68,10 +75,12 @@ body {
   color: #ddd;
   text-decoration: none;
   padding: 12px 0;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .sidebar nav a:hover {
   color: #fff;
+  transform: translateX(5px);
 }
 
 .main-content {
@@ -80,23 +89,25 @@ body {
 
 h1 {
   font-size: 28px;
-  margin: 10px 20px; /* Reduced gap */
+  margin: 10px 20px;
 }
 
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 20px; /* Reduced gap */
+  margin: 10px 20px;
 }
 
 .section-header a {
   color: #999;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 .section-header a:hover {
   text-decoration: underline;
+  color: #fff;
 }
 
 .scroll-container {
@@ -107,16 +118,22 @@ h1 {
 }
 
 .scroll-container img.friend {
-  width: 120px;  /* Increased size */
-  height: 120px; /* Increased size */
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background-color: #333;
   object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.scroll-container img.friend:hover {
+  transform: scale(1.05);
 }
 
 .game-item, .activity-item {
   width: 120px;
   text-align: center;
+  transition: transform 0.3s;
 }
 
 .game-item img, .activity-item img {
@@ -125,6 +142,11 @@ h1 {
   border-radius: 8px;
   background-color: #333;
   object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.game-item:hover, .activity-item:hover {
+  transform: scale(1.05);
 }
 
 .game-item .game-title, .game-item .game-likes {
@@ -134,10 +156,20 @@ h1 {
 
 footer {
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   background-color: #232323;
   color: #999;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+footer img {
+  width: 40px;
+  height: auto;
 }
 
 /* Responsiveness */
