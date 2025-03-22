@@ -3,9 +3,12 @@ body {
   background-color: #181818;
   color: #fff;
   margin: 0;
+  display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
+/* Top Bar */
 .top-bar {
   display: flex;
   align-items: center;
@@ -36,22 +39,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Added Signup button style */
-.top-bar .signup-btn {
-  background-color: #333;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
-  margin-left: 10px;
-}
-
-.top-bar .signup-btn:hover {
-  background-color: #444;
-  transform: scale(1.05);
-}
-
 .top-bar .logo {
   width: 150px;
   margin-right: 20px;
@@ -72,108 +59,73 @@ body {
   transform: scale(1.02);
 }
 
-.main-container {
-  display: flex;
-  flex-wrap: wrap;
+/* Login Container */
+.login-container {
+  background-color: #232323;
+  padding: 30px 40px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 50px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-.sidebar {
-  background-color: #232323;
-  width: 180px;
-  min-height: 100vh;
-  padding: 20px;
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-container form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
-.sidebar nav a {
-  display: block;
-  color: #ddd;
-  text-decoration: none;
-  padding: 12px 0;
+.login-container input {
+  padding: 12px;
   border-radius: 8px;
-  transition: color 0.3s, transform 0.3s, background-color 0.3s;
-}
-
-.sidebar nav a:hover {
-  color: #fff;
+  border: none;
   background-color: #333;
-  transform: translateX(5px);
+  color: #fff;
+  transition: transform 0.3s;
 }
 
-.main-content {
-  flex-grow: 1;
+.login-container input:focus {
+  outline: none;
+  background-color: #3a3a3a;
+  transform: scale(1.02);
 }
 
-h1 {
-  font-size: 28px;
-  margin: 10px 20px;
+.login-container button {
+  padding: 12px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 20px;
+.login-container button:hover {
+  background-color: #555;
+  transform: scale(1.05);
 }
 
-.section-header a {
+.login-container a {
   color: #999;
   text-decoration: none;
-  transition: color 0.3s;
-}
-
-.section-header a:hover {
-  text-decoration: underline;
-  color: #fff;
-}
-
-.scroll-container {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding: 0 20px 20px;
-}
-
-.scroll-container img.friend {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: #333;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-
-.scroll-container img.friend:hover {
-  transform: scale(1.05);
-}
-
-.game-item, .activity-item {
-  width: 140px;
   text-align: center;
-  transition: transform 0.3s;
-  flex-shrink: 0;
 }
 
-.game-item img, .activity-item img {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
-  background-color: #333;
-  object-fit: cover;
-  transition: transform 0.3s;
+.login-container a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
-.game-item:hover, .activity-item:hover {
-  transform: scale(1.05);
+.login-container p {
+  text-align: center;
 }
 
-.game-item .game-title, .game-item .game-likes,
-.activity-item .game-title, .activity-item .game-likes {
-  font-size: 14px;
-  margin-top: 5px;
-}
-
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -184,7 +136,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 100%;
+  margin-top: auto;
 }
 
 footer img {
@@ -192,9 +144,9 @@ footer img {
   height: auto;
 }
 
-/* Responsiveness */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .top-bar, .main-container {
+  .top-bar {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -204,12 +156,8 @@ footer img {
     margin: 10px 0 0 0;
   }
 
-  .sidebar {
-    width: 100%;
-    min-height: auto;
-  }
-
-  .scroll-container {
-    flex-wrap: wrap;
+  .login-container {
+    margin: 20px;
+    padding: 20px;
   }
 }
