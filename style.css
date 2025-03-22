@@ -18,7 +18,7 @@ body {
     border-radius: 8px;
     width: 100%;
     max-width: 600px; /* Adjusted width for the form */
-    background-color: rgba(0, 0, 0, 0.8); /* Solid non-transparent background */
+    background-color: rgba(0, 0, 0, 1); /* Fully opaque background */
 }
 
 .logo {
@@ -75,10 +75,10 @@ button:hover {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 10px 20px;
+    padding: 8px 16px; /* Smaller horizontal size */
     font-size: 14px;
-    background-color: #ff6600; /* Orange color */
-    color: white;
+    background-color: #ffffff; /* White button */
+    color: #000; /* Black text */
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -87,7 +87,7 @@ button:hover {
 }
 
 .login-button:hover {
-    background-color: #cc5500; /* Darker orange on hover */
+    background-color: #f1f1f1; /* Slightly gray on hover */
 }
 
 p {
