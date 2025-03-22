@@ -9,16 +9,11 @@ body {
 /* Combined Sidebar and Topbar */
 .sidebar {
   background-color: #232323;
-  width: 220px;
+  width: 180px; /* Reduced width */
   height: 100vh;
   padding: 20px;
   display: flex;
   flex-direction: column;
-}
-
-.sidebar .logo {
-  width: 150px;
-  margin-bottom: 20px;
 }
 
 .sidebar nav a {
@@ -39,6 +34,7 @@ body {
 .top-bar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #232323;
   padding: 10px 20px;
   border-bottom: 1px solid #333;
@@ -58,27 +54,22 @@ body {
   color: #fff;
 }
 
-.top-bar button,
-.top-buttons button {
+.top-bar .nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.top-bar .nav-buttons button {
   background-color: #232323;
   color: #fff;
   border: 1px solid #333;
   padding: 8px 16px;
-  margin-left: 10px;
   cursor: pointer;
   border-radius: 4px;
 }
 
-.top-bar button:hover,
-.top-buttons button:hover {
+.top-bar .nav-buttons button:hover {
   background-color: #333;
-}
-
-.top-buttons {
-  display: flex;
-  padding: 10px 20px;
-  background-color: #232323;
-  border-bottom: 1px solid #333;
 }
 
 h1 {
@@ -109,10 +100,19 @@ h1 {
   padding: 0 20px 20px;
 }
 
-.scroll-container img {
-  width: 160px;
-  height: 100px;
+.scroll-container img.friend {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   background-color: #333;
+  object-fit: cover;
+}
+
+.scroll-container img.game,
+.scroll-container img.activity {
+  width: 120px;
+  height: 120px;
   border-radius: 8px;
+  background-color: #333;
   object-fit: cover;
 }
