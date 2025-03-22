@@ -1,12 +1,11 @@
-/* General Styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #181818;
   color: #fff;
   margin: 0;
+  flex-direction: column;
 }
 
-/* Top Bar */
 .top-bar {
   display: flex;
   align-items: center;
@@ -37,6 +36,22 @@ body {
   transform: scale(1.05);
 }
 
+/* Added Signup button style */
+.top-bar .signup-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-left: 10px;
+}
+
+.top-bar .signup-btn:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
 .top-bar .logo {
   width: 150px;
   margin-right: 20px;
@@ -57,67 +72,108 @@ body {
   transform: scale(1.02);
 }
 
-/* Login Form Styling */
-.login-container {
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar {
   background-color: #232323;
-  max-width: 400px;
-  margin: 60px auto;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 180px;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.login-container h2 {
-  margin-bottom: 20px;
-}
-
-.login-container input {
-  width: 90%;
-  padding: 12px;
-  margin: 10px 0;
+.sidebar nav a {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  padding: 12px 0;
   border-radius: 8px;
-  border: none;
-  background-color: #333;
+  transition: color 0.3s, transform 0.3s, background-color 0.3s;
+}
+
+.sidebar nav a:hover {
   color: #fff;
-  transition: transform 0.3s;
-}
-
-.login-container input:focus {
-  outline: none;
-  transform: scale(1.02);
-}
-
-.login-container button {
-  width: 95%;
-  padding: 12px;
-  margin: 10px 0;
   background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transform: translateX(5px);
 }
 
-.login-container button:hover {
-  background-color: #444;
-  transform: scale(1.03);
+.main-content {
+  flex-grow: 1;
 }
 
-.login-container a {
+h1 {
+  font-size: 28px;
+  margin: 10px 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px;
+}
+
+.section-header a {
   color: #999;
   text-decoration: none;
-  display: block;
-  margin: 10px 0;
   transition: color 0.3s;
 }
 
-.login-container a:hover {
+.section-header a:hover {
+  text-decoration: underline;
   color: #fff;
 }
 
-/* Footer */
+.scroll-container {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 0 20px 20px;
+}
+
+.scroll-container img.friend {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #333;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.scroll-container img.friend:hover {
+  transform: scale(1.05);
+}
+
+.game-item, .activity-item {
+  width: 140px;
+  text-align: center;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.game-item img, .activity-item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  background-color: #333;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.game-item:hover, .activity-item:hover {
+  transform: scale(1.05);
+}
+
+.game-item .game-title, .game-item .game-likes,
+.activity-item .game-title, .activity-item .game-likes {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 footer {
   text-align: center;
   padding: 20px;
@@ -138,18 +194,22 @@ footer img {
 
 /* Responsiveness */
 @media (max-width: 768px) {
-  .top-bar {
+  .top-bar, .main-container {
     flex-direction: column;
     align-items: flex-start;
   }
 
   .top-bar input {
     width: 90%;
-    margin-top: 10px;
+    margin: 10px 0 0 0;
   }
 
-  .login-container {
-    width: 95%;
-    margin: 40px auto;
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .scroll-container {
+    flex-wrap: wrap;
   }
 }
