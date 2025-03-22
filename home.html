@@ -1,91 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boblox Home</title>
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Boblox Home" />
-    <meta property="og:description" content="Welcome to your Boblox home page!" />
-    <meta property="og:image" content="https://beta.boblox.ca/share-logo.png" />
-    <meta property="og:url" content="https://beta.boblox.ca/home" />
-    <meta property="og:type" content="website" />
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Boblox Home" />
-    <meta name="twitter:description" content="Welcome to your Boblox home page!" />
-    <meta name="twitter:image" content="https://beta.boblox.ca/share-logo.png" />
-    <meta name="twitter:url" content="https://beta.boblox.ca/home" />
-    
-    <!-- Favicon -->
-    <link rel="icon" href="https://beta.boblox.ca/favicon.png" />
-    
-    <!-- Home Page Styles -->
-    <link rel="stylesheet" href="home-style.css">
+  <meta charset="UTF-8">
+  <title>Boblox - Home</title>
+  <link rel="stylesheet" href="home-style.css">
+  <link rel="icon" href="https://beta.boblox.ca/favicon.png">
 </head>
 <body>
-    <!-- Top Navigation Bar -->
-    <header>
-        <div class="topbar">
-            <div class="topbar-left">
-                <span class="logo">Boblox</span>
-                <a href="#">Discover</a>
-                <a href="#">Avatar Shop</a>
-                <a href="#">Create</a>
-                <a href="#">Robux</a>
-            </div>
-            <input type="text" class="search-bar" placeholder="Search">
-            <button class="profile-btn">Profile</button>
-        </div>
-    </header>
 
-    <main>
-        <!-- Friends Section -->
-        <section class="friends">
-            <div class="section-header">
-                <h2>Friends (178)</h2>
-                <a href="#">See All ></a>
-            </div>
-            <div class="friend-list">
-                <img src="friend1.png" alt="Friend">
-                <img src="friend2.png" alt="Friend">
-                <img src="friend3.png" alt="Friend">
-                <img src="friend4.png" alt="Friend">
-                <img src="friend5.png" alt="Friend">
-                <img src="friend6.png" alt="Friend">
-            </div>
-        </section>
+  <div class="sidebar">
+    <img src="boblox-logo.png" alt="Boblox Logo" class="logo">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Profile</a>
+      <a href="#">Messages</a>
+      <a href="#">Friends</a>
+      <a href="#">Avatar</a>
+      <a href="#">Shop</a>
+      <a href="#">Create</a>
+      <a href="#">Robux</a>
+    </nav>
+  </div>
 
-        <!-- Continue Section -->
-        <section class="continue">
-            <div class="section-header">
-                <h2>Continue</h2>
-                <a href="#">See All ></a>
-            </div>
-            <div class="game-list">
-                <img src="game1.png" alt="Game">
-                <img src="game2.png" alt="Game">
-                <img src="game3.png" alt="Game">
-                <img src="game4.png" alt="Game">
-                <img src="game5.png" alt="Game">
-            </div>
-        </section>
+  <div class="main-content">
+    <div class="top-bar">
+      <input type="text" placeholder="Search">
+      <button>Profile</button>
+    </div>
 
-        <!-- Friend Activity Section -->
-        <section class="activity">
-            <div class="section-header">
-                <h2>Friend Activity</h2>
-                <a href="#">See All ></a>
-            </div>
-            <div class="activity-list">
-                <img src="activity1.png" alt="Activity">
-                <img src="activity2.png" alt="Activity">
-                <img src="activity3.png" alt="Activity">
-                <img src="activity4.png" alt="Activity">
-            </div>
-        </section>
-    </main>
+    <h1>Home</h1>
+
+    <section class="friends">
+      <div class="section-header">
+        <h2>Friends (178)</h2><a href="#">See All</a>
+      </div>
+      <div class="scroll-container">
+        <img src="placeholder.png" alt="Friend">
+        <img src="placeholder.png" alt="Friend">
+        <img src="placeholder.png" alt="Friend">
+      </div>
+    </section>
+
+    <section class="continue">
+      <div class="section-header">
+        <h2>Continue</h2><a href="#">See All</a>
+      </div>
+      <div class="scroll-container">
+        <img src="placeholder.png" alt="Game">
+        <img src="placeholder.png" alt="Game">
+        <img src="placeholder.png" alt="Game">
+      </div>
+    </section>
+
+    <section class="friend-activity">
+      <div class="section-header">
+        <h2>Friend Activity</h2><a href="#">See All</a>
+      </div>
+      <div class="scroll-container">
+        <img src="placeholder.png" alt="Activity">
+        <img src="placeholder.png" alt="Activity">
+        <img src="placeholder.png" alt="Activity">
+      </div>
+    </section>
+  </div>
+
 </body>
 </html>
