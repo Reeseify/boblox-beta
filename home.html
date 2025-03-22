@@ -60,17 +60,17 @@
           <h2>Continue</h2><a href="#">See All</a>
         </div>
         <div class="scroll-container">
-          <div class="game-item">
+          <div class="game-item" data-game-id="1" onclick="openGame(this)">
             <img src="game-1.png" alt="Game 1">
             <div class="game-title">Game 1</div>
             <div class="game-likes">87% Likes</div>
           </div>
-          <div class="game-item">
+          <div class="game-item" data-game-id="2" onclick="openGame(this)">
             <img src="game-2.png" alt="Game 2">
             <div class="game-title">Game 2</div>
             <div class="game-likes">92% Likes</div>
           </div>
-          <div class="game-item">
+          <div class="game-item" data-game-id="3" onclick="openGame(this)">
             <img src="game-3.png" alt="Game 3">
             <div class="game-title">Game 3</div>
             <div class="game-likes">78% Likes</div>
@@ -84,17 +84,17 @@
           <h2>Games</h2><a href="#">See All</a>
         </div>
         <div class="scroll-container">
-          <div class="activity-item">
+          <div class="activity-item" data-game-id="4" onclick="openGame(this)">
             <img src="game-1.png" alt="Activity Game 1">
             <div class="game-title">Game A</div>
             <div class="game-likes">80% Likes</div>
           </div>
-          <div class="activity-item">
+          <div class="activity-item" data-game-id="5" onclick="openGame(this)">
             <img src="game-2.png" alt="Activity Game 2">
             <div class="game-title">Game B</div>
             <div class="game-likes">85% Likes</div>
           </div>
-          <div class="activity-item">
+          <div class="activity-item" data-game-id="6" onclick="openGame(this)">
             <img src="game-3.png" alt="Activity Game 3">
             <div class="game-title">Game C</div>
             <div class="game-likes">90% Likes</div>
@@ -111,19 +111,24 @@
   </footer>
 
   <!-- Cookie Check Script -->
-<script>
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    return parts.length === 2 ? parts.pop().split(';').shift() : null;
-  }
+  <script>
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      return parts.length === 2 ? parts.pop().split(';').shift() : null;
+    }
 
-  // If no login cookie, redirect to signup page
-  if (!getCookie('bobloxUser')) {
-    window.location.href = 'https://beta.boblox.ca';
-  }
-</script>
+    // If no login cookie, redirect to signup page
+    if (!getCookie('bobloxUser')) {
+      window.location.href = 'https://beta.boblox.ca';
+    }
 
-  
+    // Open game by ID
+    function openGame(element) {
+      const gameId = element.getAttribute('data-game-id');
+      window.location.href = `/games/${gameId}`;
+    }
+  </script>
+
 </body>
 </html>
