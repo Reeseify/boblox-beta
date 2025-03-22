@@ -1,113 +1,69 @@
-/* Global Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #181818;
-    color: white;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Boblox</title>
+  <link rel="icon" href="https://beta.boblox.ca/favicon.png">
+  <link rel="stylesheet" href="home-style.css">
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="topbar-left">
+        <img src="https://beta.boblox.ca/favicon.png" class="logo-icon" alt="Boblox">
+        <a href="#">Discover</a>
+        <a href="#">Avatar Shop</a>
+        <a href="#">Create</a>
+        <a href="#">Robux</a>
+      </div>
+      <input type="text" class="search-bar" placeholder="Search">
+      <button class="profile-btn">Profile</button>
+    </div>
+  </header>
 
-/* Top Navigation Bar */
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #232323;
-    padding: 10px 20px;
-}
+  <main>
+    <section class="friends">
+      <div class="section-header">
+        <h2>Friends (178)</h2>
+        <a href="#">See All ></a>
+      </div>
+      <div class="friend-list">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-1AE8040D87BD82A97806DAEED57A6367-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Friend">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-6E056111C5A16232E220A4BFF158FA97-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Friend">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B75FC66CD4016D22631FEF597017636E-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Friend">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B75FC66CD4016D22631FEF597017636E-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Friend">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-2507D30C94C1ECE23597BD31E741F320-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Friend">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-28F40FD91E9B28E5F4FC8E2FE2E0ACB8-Png/150/150/AvatarHeadshot/Webp/noFilter" alt="Friend">
+      </div>
+    </section>
 
-.topbar-left {
-    display: flex;
-    align-items: center;
-}
+    <section class="continue">
+      <div class="section-header">
+        <h2>Continue</h2>
+        <a href="#">See All ></a>
+      </div>
+      <div class="game-list">
+        <img src="https://via.placeholder.com/180x100" alt="Game">
+        <img src="https://via.placeholder.com/180x100" alt="Game">
+        <img src="https://via.placeholder.com/180x100" alt="Game">
+        <img src="https://via.placeholder.com/180x100" alt="Game">
+        <img src="https://via.placeholder.com/180x100" alt="Game">
+      </div>
+    </section>
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-right: 20px;
-}
-
-.topbar-left a {
-    color: white;
-    text-decoration: none;
-    margin-right: 15px;
-    font-size: 16px;
-}
-
-.topbar-left a:hover {
-    text-decoration: underline;
-}
-
-.search-bar {
-    padding: 8px;
-    width: 200px;
-    border-radius: 5px;
-    border: none;
-}
-
-.profile-btn {
-    background-color: white;
-    color: black;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.profile-btn:hover {
-    background-color: #ddd;
-}
-
-/* Section Layout */
-main {
-    width: 90%;
-    margin: auto;
-    margin-top: 20px;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.section-header a {
-    color: #999;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.section-header a:hover {
-    text-decoration: underline;
-}
-
-/* Friends List */
-.friend-list {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-}
-
-.friend-list img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #444;
-}
-
-/* Continue and Friend Activity */
-.game-list, .activity-list {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-}
-
-.game-list img, .activity-list img {
-    width: 140px;
-    height: 140px;
-    border-radius: 10px;
-    background-color: #444;
-}
+    <section class="activity">
+      <div class="section-header">
+        <h2>Friend Activity</h2>
+        <a href="#">See All ></a>
+      </div>
+      <div class="activity-list">
+        <img src="https://via.placeholder.com/180x100" alt="Activity">
+        <img src="https://via.placeholder.com/180x100" alt="Activity">
+        <img src="https://via.placeholder.com/180x100" alt="Activity">
+        <img src="https://via.placeholder.com/180x100" alt="Activity">
+      </div>
+    </section>
+  </main>
+</body>
+</html>
