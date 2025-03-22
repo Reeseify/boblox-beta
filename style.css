@@ -14,13 +14,13 @@ body {
 }
 
 .logo {
-    width: 300px; /* Adjusted logo size */
+    width: 250px; /* Adjusted to a smaller logo size */
     height: auto;
     position: absolute;
-    top: 30px; /* Positioned higher */
+    top: 20px; /* Positioned higher */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
-    margin-bottom: 40px; /* Space below logo */
+    margin-bottom: 20px; /* Reduce space below logo */
 }
 
 .signup-container {
@@ -29,7 +29,7 @@ body {
     width: 100%;
     max-width: 600px;
     background-color: rgba(0, 0, 0, 1); /* Fully solid, non-transparent */
-    margin-top: 150px; /* Space below the logo */
+    margin-top: 100px; /* Space below the logo */
 }
 
 h1 {
