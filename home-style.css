@@ -92,24 +92,39 @@ main {
 }
 
 .friend-list img {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background-color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .game-list, .activity-list {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   overflow-x: auto;
   padding-bottom: 15px;
 }
 
-.game-list img, .activity-list img {
+.game-item {
+  background-color: #242424;
+  border-radius: 8px;
+  padding: 8px;
   width: 220px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.game-item img {
+  width: 100%;
   height: 130px;
   border-radius: 8px;
-  background-color: #333;
+  object-fit: cover;
+}
+
+.game-title {
+  color: #ccc;
+  font-size: 16px;
+  margin-top: 8px;
 }
 
 h2 {
@@ -117,7 +132,8 @@ h2 {
   margin-bottom: 5px;
 }
 
-/* Add slight shadow and rounded container like Roblox */
-.friend-list img, .game-list img, .activity-list img {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+/* Optional hover effects */
+.friend-list img:hover, .game-item:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s;
 }
