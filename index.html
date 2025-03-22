@@ -1,50 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Boblox</title>
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Boblox" />
-    <meta property="og:description" content="Boblox is the next generation of game creation. Join others in the new world of games!" />
-    <meta property="og:image" content="https://beta.boblox.ca/share-logo.png" />
-    <meta property="og:url" content="https://beta.boblox.ca" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Boblox" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Boblox" />
-    <meta name="twitter:description" content="Boblox is the next generation of game creation. Join others in the new world of games!" />
-    <meta name="twitter:image" content="https://beta.boblox.ca/share-logo.png" />
-    <meta name="twitter:url" content="https://beta.boblox.ca" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://beta.boblox.ca/favicon.png">
-
-    <!-- Optionally, other meta tags like charset, viewport, etc. -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- External Stylesheets -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Boblox</title>
+  <link rel="stylesheet" href="signup-style.css">
+  <link rel="icon" href="https://beta.boblox.ca/favicon.png">
 </head>
 
 <body>
-    <!-- Login button at top right -->
-    <button class="login-button">Login</button>
 
-    <!-- Boblox Logo outside of signup box -->
-    <img src="boblox-logo.png" alt="Boblox Logo" class="logo">
+  <div class="signup-container">
+    <h1>SIGN UP AND START HAVING FUN!</h1>
+    <form>
+      <input type="text" placeholder="Username" required>
+      <input type="password" placeholder="Password" required>
+      <select required>
+        <option value="">Select Month</option>
+        <option>January</option>
+        <option>February</option>
+        <!-- Add the rest -->
+      </select>
+      <input type="number" placeholder="Day" min="1" max="31" required>
+      <input type="number" placeholder="Year" min="1900" max="2025" required>
 
-    <!-- Sign Up Form -->
-    <div class="signup-container">
-        <h1>SIGN UP AND START HAVING FUN!</h1>
-        <form action="#">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            
-            <button type="submit">Sign Up</button>
-        </form>
-    </div>
+      <button type="submit">Sign Up</button>
+
+      <p>Already have an account? <a href="login.html">Log In</a></p>
+    </form>
+  </div>
+
 </body>
+
 </html>
