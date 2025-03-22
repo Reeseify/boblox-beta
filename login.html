@@ -46,12 +46,26 @@
     <span>Copyright Boblox 2025</span>
   </footer>
 
+<!-- Auto-Redirect if already logged in -->
 <script>
+  // Cookie check function
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    return parts.length === 2 ? parts.pop().split(';').shift() : null;
+  }
+
+  // Redirect to home if already logged in
+  if (getCookie('bobloxUser')) {
+    window.location.href = 'https://beta.boblox.ca/home';
+  }
+
+  // Login form handler
   const loginForm = document.querySelector('form');
   loginForm.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent form submission
+    e.preventDefault(); // Prevent default form submission
 
-    // Set a cookie named 'bobloxUser' valid for 7 days
+    // Set the cookie for 7 days
     const d = new Date();
     d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000)); // 7 days
     document.cookie = "bobloxUser=loggedIn; expires=" + d.toUTCString() + "; path=/";
