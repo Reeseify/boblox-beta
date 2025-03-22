@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boblox - Page Not Found</title>
+  <link rel="stylesheet" href="home-style.css">
+  <link rel="icon" href="https://beta.boblox.ca/favicon.png">
+</head>
+<body>
+  <script>
+    // Get current path
+    const path = window.location.pathname;
+
+    // If the path looks like /games/123, redirect to games/index.html and pass ID
+    if (path.startsWith('/games/')) {
+      const parts = path.split('/');
+      const gameId = parts[2];
+      if (gameId && !isNaN(gameId)) {
+        // Redirect to the games page and preserve the /games/123 URL
+        window.location.href = `/games/index.html?id=${gameId}`;
+      }
+    }
+  </script>
+
+  <div class="main-content" style="text-align: center; padding: 50px;">
+    <h1>404 - Page Not Found</h1>
+    <p>Oops! The page you're looking for doesn't exist.</p>
+    <a href="/home.html" style="color: #fff; background-color: #333; padding: 10px 20px; border-radius: 8px; text-decoration: none;">Go Home</a>
+  </div>
+</body>
+</html>
