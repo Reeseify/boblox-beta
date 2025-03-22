@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boblox Game</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <div class="top-bar">Boblox Game Page</div>
+
+  <div id="game-container">Loading game data...</div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const gameId = params.get('id');
+
+    if (!gameId) {
+      document.getElementById('game-container').innerText = "Game not found";
+    } else {
+      fetch(`https://your-server.com/api/games/${gameId}`)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('game-container').innerHTML = `
+            <h1>${data.name}</h1>
+            <img src="${data.thumbnail}" alt="Game Thumbnail">
+            <p>${data.description}</p>
+          `;
+        });
+    }
+  </script>
+</body>
+</html>
