@@ -13,18 +13,23 @@ body {
     margin: 0;
 }
 
+.logo {
+    width: 400px; /* Increased logo size */
+    height: auto;
+    position: absolute;
+    top: 20px; /* Position it higher */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    margin-bottom: 40px; /* Space below logo */
+}
+
 .signup-container {
     padding: 40px;
     border-radius: 8px;
     width: 100%;
-    max-width: 600px; /* Adjusted width for the form */
-    background-color: rgba(0, 0, 0, 1); /* Fully opaque background */
-}
-
-.logo {
-    width: 400px; /* Increased logo size */
-    height: auto;
-    margin-bottom: 40px; /* More space below logo */
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 1); /* Fully solid, non-transparent */
+    margin-top: 100px; /* Space below the logo */
 }
 
 h1 {
