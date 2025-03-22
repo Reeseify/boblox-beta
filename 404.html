@@ -7,20 +7,17 @@
   <link rel="icon" href="https://beta.boblox.ca/favicon.png">
 </head>
 <body>
-  <script>
-    // Get current path
-    const path = window.location.pathname;
-
-    // If the path looks like /games/123, redirect to games/index.html and pass ID
-    if (path.startsWith('/games/')) {
-      const parts = path.split('/');
-      const gameId = parts[2];
-      if (gameId && !isNaN(gameId)) {
-        // Redirect to the games page and preserve the /games/123 URL
-        window.location.href = `/games/index.html?id=${gameId}`;
-      }
+ <script>
+  const path = window.location.pathname;
+  if (path.startsWith('/games/')) {
+    const parts = path.split('/');
+    const id = parts[2];
+    if (id && !isNaN(id)) {
+      window.location.href = `/games/index.html?id=${id}`;
     }
-  </script>
+  }
+</script>
+
 
   <div class="main-content" style="text-align: center; padding: 50px;">
     <h1>404 - Page Not Found</h1>
