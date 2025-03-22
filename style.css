@@ -14,10 +14,10 @@ body {
 }
 
 .logo {
-    width: 400px; /* Increased logo size */
+    width: 300px; /* Adjusted logo size */
     height: auto;
     position: absolute;
-    top: 20px; /* Position it higher */
+    top: 30px; /* Positioned higher */
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
     margin-bottom: 40px; /* Space below logo */
@@ -29,7 +29,7 @@ body {
     width: 100%;
     max-width: 600px;
     background-color: rgba(0, 0, 0, 1); /* Fully solid, non-transparent */
-    margin-top: 100px; /* Space below the logo */
+    margin-top: 150px; /* Space below the logo */
 }
 
 h1 {
@@ -80,8 +80,8 @@ button:hover {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 8px 16px; /* Smaller horizontal size */
-    font-size: 14px;
+    padding: 5px 10px; /* Made button much smaller */
+    font-size: 12px;
     background-color: #ffffff; /* White button */
     color: #000; /* Black text */
     border: none;
