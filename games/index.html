@@ -50,26 +50,36 @@
   </footer>
 
   <script>
-    // Check login cookie to toggle sidebar
+    // Cookie check for login
     function getCookie(name) {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
       return parts.length === 2 ? parts.pop().split(';').shift() : null;
     }
 
+    // Show sidebar if logged in
     if (getCookie('bobloxUser')) {
       document.getElementById('sidebar').style.display = 'flex';
     }
 
-    // Extract Game ID from URL
-    const pathParts = window.location.pathname.split('/');
-    const gameId = pathParts[pathParts.length - 1];
+    // Get Game ID from URL query (?id=1)
+    const params = new URLSearchParams(window.location.search);
+    let gameId = params.get('id');
 
-    // If invalid, show error
+    // Fallback: Try to extract game ID from URL path if no query param (optional for local dev)
+    if (!gameId) {
+      const pathParts = window.location.pathname.split('/');
+      const possibleId = pathParts[pathParts.length - 1];
+      if (!isNaN(possibleId)) {
+        gameId = possibleId;
+      }
+    }
+
+    // Validate gameId
     if (!gameId || isNaN(gameId)) {
       document.getElementById('game-container').innerHTML = '<h2>Invalid Game ID</h2>';
     } else {
-      // Example: Replace this URL with your real game API
+      // Fetch game data from your server
       fetch(`https://3fsvj1zh-3000.use.devtunnels.ms/assets/get?assetId=${gameId}`)
         .then(response => response.json())
         .then(game => {
