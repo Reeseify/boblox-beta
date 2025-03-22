@@ -46,4 +46,19 @@
     </div>
 
 
+    <!-- Auto-Redirect if already logged in -->
+<script>
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    return parts.length === 2 ? parts.pop().split(';').shift() : null;
+  }
+
+  // If logged in, redirect to home
+  if (getCookie('bobloxUser')) {
+    window.location.href = 'https://beta.boblox.ca/home';
+  }
+</script>
+
+
 </body></html>
