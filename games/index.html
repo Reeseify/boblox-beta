@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Boblox - Game</title>
-  <link rel="stylesheet" href="../home-style.css">
+  <link rel="stylesheet" href="game-style.css">
   <link rel="icon" href="https://beta.boblox.ca/favicon.png">
 </head>
 
@@ -22,7 +22,7 @@
     <input type="text" placeholder="Search">
   </div>
 
-  <!-- Sidebar (Shown only if logged in) -->
+  <!-- Sidebar (Shown if logged in) -->
   <div id="sidebar" class="sidebar" style="display:none;">
     <nav>
       <a href="#">Home</a>
@@ -39,7 +39,7 @@
   <!-- Game Content -->
   <div class="main-content">
     <div id="game-container">
-      <h1>Loading Game...</h1>
+      <h2>Loading Game...</h2>
     </div>
   </div>
 
@@ -50,7 +50,7 @@
   </footer>
 
   <script>
-    // Cookie check for login
+    // Check login cookie
     function getCookie(name) {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
@@ -62,34 +62,32 @@
       document.getElementById('sidebar').style.display = 'flex';
     }
 
-    // Get Game ID from URL query (?id=1)
-    const params = new URLSearchParams(window.location.search);
-    let gameId = params.get('id');
+    // Get Game ID from URL (supports /games/1 style)
+    const pathParts = window.location.pathname.split('/');
+    const gameId = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
 
-    // Fallback: Try to extract game ID from URL path if no query param (optional for local dev)
-    if (!gameId) {
-      const pathParts = window.location.pathname.split('/');
-      const possibleId = pathParts[pathParts.length - 1];
-      if (!isNaN(possibleId)) {
-        gameId = possibleId;
-      }
-    }
-
-    // Validate gameId
     if (!gameId || isNaN(gameId)) {
       document.getElementById('game-container').innerHTML = '<h2>Invalid Game ID</h2>';
     } else {
-      // Fetch game data from your server
+      // Fetch game data
       fetch(`https://3fsvj1zh-3000.use.devtunnels.ms/assets/get?assetId=${gameId}`)
         .then(response => response.json())
         .then(game => {
           document.getElementById('game-container').innerHTML = `
-            <h1>${game.name}</h1>
-            <img src="${game.thumbnail}" alt="Game Thumbnail" style="max-width: 400px; border-radius: 8px;">
-            <p>${game.description}</p>
-            <div>Visits: ${game.visits || 0}</div>
-            <div>Likes: ${game.likes || 0}%</div>
-            <button style="margin-top:20px; padding:10px 20px;">Play</button>
+            <div class="game-header">
+              <img src="${game.thumbnail}" alt="Game Thumbnail">
+              <div class="game-details">
+                <h1>${game.name}</h1>
+                <p>${game.description}</p>
+                <button class="play-button">Play</button>
+              </div>
+            </div>
+            <div class="stats">
+              <div>Visits: ${game.visits || 0}</div>
+              <div>Likes: ${game.likes || 0}%</div>
+              <div>Created: ${game.created || 'Unknown'}</div>
+              <div>Updated: ${game.updated || 'Unknown'}</div>
+            </div>
           `;
         })
         .catch(() => {
