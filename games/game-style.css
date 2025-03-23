@@ -3,7 +3,6 @@ body {
   background-color: #181818;
   color: #fff;
   margin: 0;
-  padding: 0;
 }
 
 .top-bar {
@@ -12,143 +11,157 @@ body {
   background-color: #232323;
   padding: 10px 20px;
   border-bottom: 1px solid #333;
+  flex-wrap: wrap;
 }
 
 .top-bar .nav-buttons {
   display: flex;
-  gap: 15px;
-  margin-left: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .top-bar .nav-buttons button {
-  background-color: transparent;
+  background-color: #232323;
   color: #fff;
   border: none;
-  cursor: pointer;
   padding: 8px 16px;
-  transition: background-color 0.3s;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .top-bar .nav-buttons button:hover {
   background-color: #333;
+  transform: scale(1.05);
 }
 
 .top-bar .logo {
   width: 150px;
+  margin-right: 20px;
 }
 
 .top-bar input {
-  margin-left: auto;
+  width: 250px;
   padding: 8px;
   border-radius: 8px;
   border: none;
   background-color: #333;
   color: #fff;
+  margin-left: 10px;
+  transition: transform 0.3s;
 }
 
-/* Sidebar Fix */
+.top-bar input:hover {
+  transform: scale(1.02);
+}
+
+/* Main layout fix */
+.main-container {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Sidebar */
 .sidebar {
   background-color: #232323;
   width: 180px;
   min-height: 100vh;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
+  flex-shrink: 0;
 }
 
 .sidebar nav a {
+  display: block;
   color: #ddd;
   text-decoration: none;
-  padding: 10px 0;
+  padding: 12px 0;
   border-radius: 8px;
-  transition: background-color 0.3s;
+  transition: color 0.3s, transform 0.3s, background-color 0.3s;
 }
 
 .sidebar nav a:hover {
-  background-color: #333;
   color: #fff;
+  background-color: #333;
+  transform: translateX(5px);
 }
 
+/* Main game content */
 .main-content {
-  margin-left: 200px;
+  flex-grow: 1;
   padding: 30px;
 }
 
-/* Game Container Styling */
+/* Game Container */
 #game-container {
   background-color: #232323;
+  padding: 20px;
   border-radius: 12px;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
 }
 
 #game-container img {
-  max-width: 300px;
-  border-radius: 12px;
-}
-
-#game-container .info {
-  flex-grow: 1;
+  max-width: 350px;
+  border-radius: 8px;
 }
 
 #game-container h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  margin-top: 0;
 }
 
 #game-container p {
-  margin: 10px 0;
+  font-size: 16px;
+  color: #ccc;
 }
 
 .play-button {
-  background-color: #2563eb;
+  background-color: #1d7afa;
   color: #fff;
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 10px 20px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .play-button:hover {
-  background-color: #1d4ed8;
+  background-color: #145fc9;
+  transform: scale(1.05);
 }
 
-.stats {
-  background-color: #2a2a2a;
-  padding: 20px;
-  border-radius: 12px;
-  margin-top: 20px;
-  display: flex;
-  gap: 40px;
-  justify-content: space-between;
-}
-
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #232323;
   color: #999;
   font-size: 14px;
-  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .main-content {
-    margin-left: 0;
-  }
+footer img {
+  width: 40px;
+  height: auto;
+}
 
-  #game-container {
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .top-bar, .main-container {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .stats {
-    flex-direction: column;
-    gap: 15px;
+  .top-bar input {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
   }
 }
