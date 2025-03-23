@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Boblox - Game</title>
-  <link rel="stylesheet" href="game-style.css"> <!-- Use your game-specific CSS -->
+  <link rel="stylesheet" href="game-style.css">
   <link rel="icon" href="https://beta.boblox.ca/favicon.png">
 </head>
 
 <body>
+
   <!-- Top Bar -->
   <div class="top-bar">
     <img src="../boblox-logo.png" alt="Boblox Logo" class="logo">
@@ -22,24 +23,29 @@
     <input type="text" placeholder="Search">
   </div>
 
-  <!-- Sidebar (Shown only if logged in) -->
-  <div id="sidebar" class="sidebar" style="display:none;">
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Profile</a>
-      <a href="#">Messages</a>
-      <a href="#">Friends</a>
-      <a href="#">Avatar</a>
-      <a href="#">Shop</a>
-      <a href="#">Create</a>
-      <a href="#">Robux</a>
-    </nav>
-  </div>
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Sidebar (shows only if logged in) -->
+    <div id="sidebar" class="sidebar" style="display:none;">
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Messages</a>
+        <a href="#">Friends</a>
+        <a href="#">Avatar</a>
+        <a href="#">Shop</a>
+        <a href="#">Create</a>
+        <a href="#">Robux</a>
+      </nav>
+    </div>
 
-  <!-- Game Content -->
-  <div class="main-content">
-    <div id="game-container">
-      <h1>Loading Game...</h1>
+    <!-- Game Content -->
+    <div class="main-content">
+      <div id="game-container">
+        <h1>Loading Game...</h1>
+      </div>
+
+      <div id="stats-container" class="stats-bar" style="display:none;"></div>
     </div>
   </div>
 
@@ -49,8 +55,9 @@
     <span>Copyright Boblox 2025</span>
   </footer>
 
+  <!-- Script -->
   <script>
-    // Check login cookie
+    // Cookie check for login
     function getCookie(name) {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
@@ -62,48 +69,51 @@
       document.getElementById('sidebar').style.display = 'flex';
     }
 
-    const container = document.getElementById('game-container');
-
-    // Get the game ID from URL ?id=1
+    // Get Game ID from URL (supports ?id=123 or /games/123)
     const params = new URLSearchParams(window.location.search);
-    const gameId = params.get('id');
+    let gameId = params.get('id');
+    if (!gameId) {
+      const pathParts = window.location.pathname.split('/');
+      const possibleId = pathParts[pathParts.length - 1];
+      if (!isNaN(possibleId)) gameId = possibleId;
+    }
+
+    const gameContainer = document.getElementById('game-container');
+    const statsContainer = document.getElementById('stats-container');
 
     if (!gameId || isNaN(gameId)) {
-      container.innerHTML = '<h2>Invalid Game ID</h2>';
+      gameContainer.innerHTML = '<h2>Invalid Game ID</h2>';
     } else {
-      // Fetch game data from your server (replace URL with your API endpoint)
       fetch(`https://3fsvj1zh-3000.use.devtunnels.ms/assets/get?assetId=${gameId}`)
-        .then(response => {
-          if (!response.ok) throw new Error('Failed to fetch game');
-          return response.json();
-        })
+        .then(response => response.json())
         .then(game => {
-          container.innerHTML = `
-            <div class="game-header">
-              <img src="${game.thumbnail}" alt="Game Thumbnail" class="game-thumbnail">
-              <div class="game-details">
-                <h1>${game.name}</h1>
-                <p>${game.description}</p>
-                <button class="play-button">Play</button>
-              </div>
+          // Game Display HTML
+          gameContainer.innerHTML = `
+            <img src="${game.thumbnail}" alt="Game Thumbnail">
+            <div class="game-info">
+              <h1>${game.name}</h1>
+              <p>${game.description}</p>
+              <button class="play-button">Play</button>
             </div>
-            <div class="stats">
-              <div>Visits: ${game.visits || 0}</div>
-              <div>Likes: ${game.likes || 0}%</div>
-              <div>Created: ${game.created || 'Unknown'}</div>
-              <div>Updated: ${game.updated || 'Unknown'}</div>
-            </div>
+          `;
+
+          // Stats Bar
+          statsContainer.style.display = 'flex';
+          statsContainer.innerHTML = `
+            <div>Visits: ${game.visits || 0}</div>
+            <div>Likes: ${game.likes || 0}%</div>
+            <div>Created: ${game.created || 'Unknown'}</div>
+            <div>Updated: ${game.updated || 'Unknown'}</div>
           `;
         })
         .catch(() => {
-          container.innerHTML = `
-            <div style="text-align:center; margin-top: 100px; font-size: 20px; color: #ccc;">
-              Problem communicating with servers
-            </div>
+          gameContainer.innerHTML = `
+            <h2 style="text-align:center;">Problem communicating with servers</h2>
           `;
         });
     }
   </script>
 
 </body>
+
 </html>
