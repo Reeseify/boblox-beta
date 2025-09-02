@@ -30,6 +30,14 @@
 <body>
 
     <!-- Auto-Redirect if already logged in -->
+
+<script>
+if ('serviceWorker' in navigator) {
+  // registers for the entire site scope
+  navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(()=>{});
+}
+</script>
+
 <script>
   function getCookie(name) {
     const value = `; ${document.cookie}`;
