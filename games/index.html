@@ -55,6 +55,151 @@
     <span>Copyright Boblox 2025</span>
   </footer>
 
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boblox - Home</title>
+  <link rel="stylesheet" href="home-style.css">
+  <link rel="icon" href="https://beta.boblox.ca/favicon.png">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <img src="boblox-logo.png" alt="Boblox Logo" class="logo">
+    <div class="nav-buttons">
+      <button>Home</button>
+      <button>Games</button>
+      <button>Catalog</button>
+      <button>Create</button>
+      <button>Profile</button>
+    </div>
+    <input type="text" placeholder="Search">
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Messages</a>
+        <a href="#">Friends</a>
+        <a href="#">Avatar</a>
+        <a href="#">Shop</a>
+        <a href="#">Create</a>
+        <a href="#">Robux</a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h1>Home</h1>
+
+      <!-- Friends Section -->
+      <section class="friends">
+        <div class="section-header">
+          <h2>Friends (178)</h2><a href="#">See All</a>
+        </div>
+        <div class="scroll-container">
+          <img src="placeholder.png" alt="Friend" class="friend">
+          <img src="placeholder.png" alt="Friend" class="friend">
+          <img src="placeholder.png" alt="Friend" class="friend">
+        </div>
+      </section>
+
+      <!-- Continue Section -->
+      <section class="continue">
+        <div class="section-header">
+          <h2>Continue</h2><a href="#">See All</a>
+        </div>
+        <div class="scroll-container">
+          <div class="game-item" data-game-id="1" onclick="openGame(this)">
+            <img src="https://beta.boblox.ca/gorilla%20games%20icon.png" alt="Gorilla Games">
+            <div class="game-title">Gorilla Games</div>
+            <div class="game-likes">86% Likes</div>
+          </div>
+          <div class="game-item" data-game-id="2" onclick="openGame(this)">
+            <img src="game-2.png" alt="Game 2">
+            <div class="game-title">Game 2</div>
+            <div class="game-likes">92% Likes</div>
+          </div>
+          <div class="game-item" data-game-id="3" onclick="openGame(this)">
+            <img src="game-3.png" alt="Game 3">
+            <div class="game-title">Game 3</div>
+            <div class="game-likes">78% Likes</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Friend Activity (Games) Section -->
+      <section class="friend-activity">
+        <div class="section-header">
+          <h2>Games</h2><a href="#">See All</a>
+        </div>
+        <div class="scroll-container">
+          <div class="activity-item" data-game-id="4" onclick="openGame(this)">
+            <img src="game-1.png" alt="Activity Game 1">
+            <div class="game-title">Game A</div>
+            <div class="game-likes">80% Likes</div>
+          </div>
+          <div class="activity-item" data-game-id="5" onclick="openGame(this)">
+            <img src="https://beta.boblox.ca/Epic%20Platforms%20Egg%20Hunt%202025%20Icon.png" alt="Epic Platforms">
+            <div class="game-title">Epic Platforms</div>
+            <div class="game-likes">74% Likes</div>
+          </div>
+          <div class="activity-item" data-game-id="6" onclick="openGame(this)">
+            <img src="game-3.png" alt="Activity Game 3">
+            <div class="game-title">Game C</div>
+            <div class="game-likes">90% Likes</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <img src="boblox-logo.png" alt="Boblox Logo">
+    <span>Copyright Boblox 2025</span>
+  </footer>
+
+  <script>
+if ('serviceWorker' in navigator) {
+  // registers for the entire site scope
+  navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(()=>{});
+}
+</script>
+
+  
+  <!-- Cookie Check Script -->
+  <script>
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      return parts.length === 2 ? parts.pop().split(';').shift() : null;
+    }
+
+    // If no login cookie, redirect to signup page
+    if (!getCookie('bobloxUser')) {
+      window.location.href = 'https://beta.boblox.ca';
+    }
+
+    // Open game by ID
+    function openGame(element) {
+      const gameId = element.getAttribute('data-game-id');
+      window.location.href = `/games/${gameId}`;
+    }
+  </script>
+
+</body>
+</html>
+
+  
   <!-- Script -->
   <script>
     // Cookie check for login
