@@ -3,35 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Boblox — Temporarily Unavailable</title>
+  <title>Boblox</title>
   <meta name="theme-color" content="#0e0f12" />
-  <link rel="icon" href="Boblox new logo.png" />
+  <link rel="icon" href="favicon.png" />
   <style>
     :root{
-      --bg:#0e0f12;
-      --elev:#14161b;
-      --panel:#17191f;
-      --muted:#a9b0be;
-      --text:#e8ecf3;
-      --brand:#ef4444;    /* red */
-      --brand-2:#991b1b;  /* darker red */
-      --accent:#22d3ee;   /* cyan accent */
-      --radius:16px;
-      --shadow:0 20px 60px rgba(0,0,0,.45), 0 8px 24px rgba(0,0,0,.35);
+      --bg:#0e0f12; --elev:#14161b; --panel:#17191f;
+      --muted:#a9b0be; --text:#e8ecf3;
+      --brand:#ef4444; --brand-2:#991b1b; --accent:#22d3ee;
+      --radius:16px; --shadow:0 20px 60px rgba(0,0,0,.45),0 8px 24px rgba(0,0,0,.35);
     }
-
-    /* Reset-ish */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0; color:var(--text); background:var(--bg);
-      font:14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+      font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;
       display:flex; flex-direction:column;
     }
 
-    /* Background */
+    /* Background like your home tiles */
     .bg{
-      position:fixed; inset:0; pointer-events:none; z-index:-1;
+      position:fixed; inset:0; z-index:-1; pointer-events:none;
       background:
         radial-gradient(1200px 600px at 10% -10%, rgba(239,68,68,.12), transparent 60%),
         radial-gradient(1200px 600px at 110% 110%, rgba(34,211,238,.08), transparent 60%),
@@ -39,11 +31,10 @@
       filter:saturate(.9) brightness(.65);
     }
     .bg::after{
-      /* subtle diagonal mask like the home page tiles vibe */
       content:""; position:absolute; inset:-2px;
       background:
-        linear-gradient( to bottom, rgba(0,0,0,.35), rgba(0,0,0,.65) ),
-        repeating-linear-gradient(35deg, rgba(0,0,0,.0) 0 24px, rgba(255,255,255,.02) 24px 48px);
+        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.65)),
+        repeating-linear-gradient(35deg, rgba(0,0,0,0) 0 24px, rgba(255,255,255,.02) 24px 48px);
       backdrop-filter: blur(1px);
     }
 
@@ -55,46 +46,37 @@
       border-bottom:1px solid rgba(255,255,255,.06);
       backdrop-filter:saturate(1.2) blur(8px);
     }
-    .top-bar .logo{height:34px; width:auto; display:block}
+    .top-bar .logo{height:36px; width:auto}
     .pill{
-      margin-left:auto;
-      padding:6px 12px; border-radius:999px; font-weight:600;
+      margin-left:auto; padding:6px 12px; border-radius:999px; font-weight:600;
       background:linear-gradient(180deg, rgba(239,68,68,.18), rgba(153,27,27,.18));
-      border:1px solid rgba(239,68,68,.35); color:#ffd7d7;
-      letter-spacing:.2px; box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+      border:1px solid rgba(239,68,68,.35); color:#ffd7d7; letter-spacing:.2px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
     }
 
-    /* Main */
-    .wrap{
-      flex:1; display:grid; place-items:center; padding:40px 16px;
-    }
+    /* Center card */
+    .wrap{flex:1; display:grid; place-items:center; padding:40px 16px;}
     .card{
-      width:min(860px, 96vw);
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+      width:min(860px,96vw);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
       border:1px solid rgba(255,255,255,.08);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
+      border-radius:var(--radius); box-shadow:var(--shadow);
       padding:28px; position:relative; overflow:hidden;
     }
     .card::before{
-      content:""; position:absolute; inset:0;
+      content:""; position:absolute; inset:0; pointer-events:none;
       background:radial-gradient(600px 220px at 15% 0%, rgba(239,68,68,.12), transparent 60%),
                  radial-gradient(700px 260px at 85% 100%, rgba(34,211,238,.10), transparent 60%);
-      pointer-events:none;
     }
-    .header{
-      display:flex; align-items:center; gap:18px; margin-bottom:14px;
-    }
-    .brandmark{height:44px; width:auto}
+    .header{display:flex; align-items:center; gap:18px; margin-bottom:14px;}
+    .brandmark{height:50px; width:auto}
     h1{
       margin:0; font-size:28px; letter-spacing:.2px;
-      background:linear-gradient(180deg, #fff, #c1c7d0);
+      background:linear-gradient(180deg,#fff,#c1c7d0);
       -webkit-background-clip:text; background-clip:text; color:transparent;
       filter:drop-shadow(0 1px 0 rgba(0,0,0,.35));
     }
-    .lead{
-      color:var(--muted); margin:6px 0 18px; font-size:15px;
-    }
+    .lead{color:var(--muted); margin:6px 0 18px; font-size:15px;}
 
     /* Status row */
     .status{
@@ -102,22 +84,19 @@
       padding:12px; border-radius:12px;
       background:rgba(23,25,31,.6); border:1px solid rgba(255,255,255,.06);
     }
-    .dot{width:10px; height:10px; border-radius:50%; background:#f97316;
-      box-shadow:0 0 18px #f97316}
+    .dot{width:10px; height:10px; border-radius:50%; background:#ef4444; box-shadow:0 0 18px #ef4444}
     .status strong{color:#ffe1c7}
 
     /* Actions */
-    .actions{
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;
-    }
+    .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;}
     .btn{
-      appearance:none; border:none; cursor:pointer;
-      padding:10px 14px; border-radius:12px; font-weight:700; letter-spacing:.2px;
-      transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+      appearance:none; border:none; cursor:pointer; padding:10px 14px;
+      border-radius:12px; font-weight:700; letter-spacing:.2px;
+      transition:transform .15s ease, box-shadow .15s ease, background-color .2s ease;
     }
     .btn-primary{
-      background:linear-gradient(180deg, var(--brand), var(--brand-2));
-      color:#fff; box-shadow:0 10px 24px rgba(239,68,68,.25), inset 0 1px 0 rgba(255,255,255,.12);
+      background:linear-gradient(180deg, var(--brand), var(--brand-2)); color:#fff;
+      box-shadow:0 10px 24px rgba(239,68,68,.25), inset 0 1px 0 rgba(255,255,255,.12);
       border:1px solid #7f1d1d;
     }
     .btn-ghost{
@@ -127,10 +106,7 @@
     .btn:hover{box-shadow:0 12px 32px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.18)}
 
     /* Progress / spinner */
-    .progress{
-      display:flex; align-items:center; gap:10px; margin-top:16px; color:#cbd5e1;
-      font-variant-numeric: tabular-nums;
-    }
+    .progress{display:flex; align-items:center; gap:10px; margin-top:16px; color:#cbd5e1;}
     .spinner{
       width:18px; height:18px; border-radius:50%;
       border:2px solid rgba(255,255,255,.25); border-top-color:#fff;
@@ -139,10 +115,8 @@
     @keyframes spin{to{transform:rotate(360deg)}}
 
     /* Tips */
-    details{
-      margin-top:16px; border:1px solid rgba(255,255,255,.08); border-radius:12px;
-      background:rgba(255,255,255,.03); padding:10px 12px;
-    }
+    details{margin-top:16px; border:1px solid rgba(255,255,255,.08); border-radius:12px;
+      background:rgba(255,255,255,.03); padding:10px 12px;}
     summary{cursor:pointer; color:#cfe9ff; font-weight:600}
     .tips{color:#b9c1ce; padding:8px 2px 0; font-size:13px}
     .tips li{margin:6px 0}
@@ -155,7 +129,6 @@
     }
     footer img{height:22px; width:auto; opacity:.9}
 
-    /* Small */
     @media (max-width:520px){
       .header{flex-direction:column; align-items:flex-start}
       h1{font-size:24px}
@@ -167,7 +140,7 @@
 
   <!-- Top bar -->
   <div class="top-bar">
-    <img class="logo" src="Boblox new logo.png" alt="Boblox" />
+    <img class="logo" src="BOBLOX 2 Logo.png" alt="Boblox" />
     <span class="pill">Service notice</span>
   </div>
 
@@ -175,7 +148,7 @@
   <main class="wrap">
     <section class="card" role="status" aria-live="polite">
       <div class="header">
-        <img class="brandmark" src="Boblox new logo.png" alt="Boblox logo" />
+        <img class="brandmark" src="BOBLOX 2 Logo.png" alt="Boblox logo" />
         <h1>Sorry—Boblox isn’t available right now</h1>
       </div>
 
@@ -186,7 +159,7 @@
 
       <div class="status">
         <span class="dot" id="statusDot" aria-hidden="true"></span>
-        <div><strong id="statusText">Investigating…</strong> Last check <span id="lastCheck">just now</span>.</div>
+        <div><strong id="statusText">Still unavailable</strong> Last check <span id="lastCheck">just now</span>.</div>
       </div>
 
       <div class="actions">
@@ -211,12 +184,12 @@
   </main>
 
   <footer>
-    <img src="Boblox new logo.png" alt="" />
+    <img src="BOBLOX 2 Logo.png" alt="" />
     <span>Copyright Boblox 2025 • All systems monitored</span>
   </footer>
 
   <script>
-    // Simple “auto-retry” & status UX (no external calls)
+    // === keep the auto-retry / buttons / status behaviour ===
     const retryBtn = document.getElementById('retryBtn');
     const copyBtn  = document.getElementById('copyBtn');
     const statusEl = document.getElementById('statusText');
@@ -224,69 +197,44 @@
     const lastEl   = document.getElementById('lastCheck');
     const retryIn  = document.getElementById('retryIn');
 
-    let seconds = 10, timer;
-
+    let seconds = 10;
     function fmtTime(d){
       return d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
     }
-
     function setStatus(kind){
       if(kind==='checking'){
         statusEl.textContent = 'Checking…';
-        dotEl.style.background = '#f59e0b'; // amber
-        dotEl.style.boxShadow = '0 0 18px #f59e0b';
+        dotEl.style.background = '#f59e0b'; dotEl.style.boxShadow = '0 0 18px #f59e0b';
       } else if(kind==='down'){
         statusEl.textContent = 'Still unavailable';
-        dotEl.style.background = '#ef4444'; // red
-        dotEl.style.boxShadow = '0 0 18px #ef4444';
+        dotEl.style.background = '#ef4444'; dotEl.style.boxShadow = '0 0 18px #ef4444';
       } else {
         statusEl.textContent = 'Back online';
-        dotEl.style.background = '#10b981'; // green
-        dotEl.style.boxShadow = '0 0 18px #10b981';
+        dotEl.style.background = '#10b981'; dotEl.style.boxShadow = '0 0 18px #10b981';
       }
     }
-
     function countdown(){
       retryIn.textContent = `Auto-retry in ${seconds}s`;
-      if(seconds<=0){
-        tryCheck();
-        seconds = 10;
-      }
+      if(seconds<=0){ tryCheck(); seconds = 10; }
       seconds--;
     }
-
     function tryCheck(){
       setStatus('checking');
       lastEl.textContent = `at ${fmtTime(new Date())}`;
-      // If you later wire this to your real /health endpoint,
-      // replace the timeout with a fetch and branch on response.
-      setTimeout(()=>{
-        // Simulate “still down”
-        setStatus('down');
-      }, 600);
+      // Swap this timeout for a real /health fetch to redirect on success:
+      // fetch('/health').then(r => r.ok ? location.reload() : setStatus('down')).catch(() => setStatus('down'));
+      setTimeout(()=> setStatus('down'), 600);
     }
-
-    retryBtn.addEventListener('click', () => {
-      // In production, you might do: window.location.reload();
-      tryCheck();
-    });
-
+    retryBtn.addEventListener('click', tryCheck);
     copyBtn.addEventListener('click', async () => {
-      const payload = {
-        page: location.href,
-        time: new Date().toISOString(),
-        ua: navigator.userAgent
-      };
+      const payload = { page: location.href, time: new Date().toISOString(), ua: navigator.userAgent };
       try{
         await navigator.clipboard.writeText(JSON.stringify(payload,null,2));
-        copyBtn.textContent = 'Copied!';
-        setTimeout(()=>copyBtn.textContent='Copy error info', 1200);
-      }catch{ /* ignore */ }
+        copyBtn.textContent = 'Copied!'; setTimeout(()=>copyBtn.textContent='Copy error info', 1200);
+      }catch{}
     });
-
-    // start
+    setInterval(countdown, 1000);
     setStatus('down');
-    timer = setInterval(countdown, 1000);
   </script>
 </body>
 </html>
