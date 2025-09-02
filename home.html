@@ -110,6 +110,14 @@
     <span>Copyright Boblox 2025</span>
   </footer>
 
+  <script>
+if ('serviceWorker' in navigator) {
+  // registers for the entire site scope
+  navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(()=>{});
+}
+</script>
+
+  
   <!-- Cookie Check Script -->
   <script>
     function getCookie(name) {
